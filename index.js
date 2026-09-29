@@ -1,10 +1,12 @@
+import { fileURLToPath } from "node:url";
 import fs from "node:fs/promises";
-import { PDFParse } from "pdf-parse";
+import path from "node:path";
 
-const data = await fs.readFile(
-  "C:/Projects/project files/omega/Field/uploads/actiongypsum_3512_20260811_10294992_4880668060.pdf",
-);
-const parser = new PDFParse({data});
-// console.log("Parser: ", parser);
-const result = await parser.getText();
-await fs.writeFile("data.json", JSON.stringify(result, null, 2));
+const dir = path.dirname(fileURLToPath(import.meta.url));
+const entries = await fs.readdir(dir, { withFileTypes: true });
+console.log("Entries: ", entries);
+
+for (const entry of entries) {
+  if (entry.isFile()) console.log("File: ", entry.name);
+  else if (entry.isDirectory()) console.log("Directory: ", entry.name);
+}
