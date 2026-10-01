@@ -1,3 +1,4 @@
+/*
 // 1. 
 import { writeFile, readFile, appendFile } from 'node:fs/promises';
 
@@ -19,4 +20,37 @@ async function main() {
   console.log(context)
 }
 
+
+
+
 main();
+*/
+
+/*
+// 2
+import path from "node:path"
+import os from "node:os"
+
+// 🎯 MINI-CHALLENGE: a "system report" line
+// 1. Build a log file path inside the user's home folder
+//    named "node-app.log" (use os.homedir() + path.join).
+// 2. Print that full path.
+// 3. Print the file NAME on its own (use path.basename).
+// 4. Print how many CPU cores the machine has.
+//
+// ✅ Example output:
+//    Log path: /home/sam/node-app.log
+//    File name: node-app.log
+//    Cores: 8
+
+// your code here
+
+const fullPath = path.join(os.homedir(), "node-app.log")
+console.log("Log path: ",fullPath)
+console.log("File name: ", path.basename(fullPath))
+console.log("Cores: ", os.cpus().length)
+*/
+
+
+
+
