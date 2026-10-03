@@ -1,3 +1,4 @@
+/*
 // 1. 
 import { writeFile, readFile, appendFile } from 'node:fs/promises';
 
@@ -20,3 +21,4 @@ async function main() {
 }
 
 main();
+*/

@@ -1,5 +1,5 @@
 import { fileURLToPath } from "node:url";
-import fs from "node:fs/promises";
+import fs from "node:fs";
 import path from "node:path";
 import {watch} from "node:fs";
 
@@ -23,11 +23,12 @@ import {watch} from "node:fs";
 // console.log(buffer.toString('utf8', 0, bytesRead));
 // await fr.close();
 
-const watches = watch("data.txt")
-watches.on("change", async (eventType, filename) => {
-  const context = await fs.readFile("data.txt", { encoding: "utf8" });
-  console.log("File content: ", context);
-  console.log("File changed");
-  console.log("Event Type: ", eventType);
-  console.log("Filename: ", filename);
-});
+// const watches = watch("data.txt")
+// watches.on("change", async (eventType, filename) => {
+//   const context = await fs.readFile("data.txt", { encoding: "utf8" });
+//   console.log("File content: ", context);
+//   console.log("File changed");
+//   console.log("Event Type: ", eventType);
+//   console.log("Filename: ", filename);
+// });
+
