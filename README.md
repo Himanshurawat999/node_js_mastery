@@ -22,3 +22,7 @@ npm pkg set type=module
 ```
 
 Run its scripts from inside its folder. The root `package.json` only serves `practice/` and `challenges/`.
+
+| Project | Spec |
+|---|---|
+| [Folder Info](projects/Folder%20Info/) | https://roadmap.sh/projects/nodejs-folder-info |
