@@ -20,9 +20,6 @@ async function main() {
   console.log(context)
 }
 
-
-
-
 main();
 */
 
@@ -50,7 +47,3 @@ console.log("Log path: ",fullPath)
 console.log("File name: ", path.basename(fullPath))
 console.log("Cores: ", os.cpus().length)
 */
-
-
-
-
