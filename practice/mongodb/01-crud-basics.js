@@ -3,7 +3,15 @@ const client = new MongoClient(process.env.MONGODB_URI);
 try {
   await client.connect();
   const db = client.db("sample_mflix");
-  const movies = db.collection("movies");
+  const res = await db.command({ validate: "movies" });
+
+  console.log("valid:", res.valid); // true = no problems found
+  console.log("records:", res.nrecords); // how many documents were scanned
+  console.log("invalid docs:", res.nInvalidDocuments);
+  console.log("indexes:", res.nIndexes, res.keysPerIndex);
+  console.log("errors:", res.errors); // [] when healthy
+  console.log("warnings:", res.warnings);
+
   // Collection Bulk Opration
   // const result = await movies.bulkWrite(
   //   [
